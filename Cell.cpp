@@ -1,7 +1,7 @@
 #include "Cell.hpp"
 
 Cell::Cell(sf::Vector2f size, sf::Vector2f position, sf::Color color, sf::Color wallColor)
-	: m_color{color}, m_wallColor{wallColor}
+	: m_color{color}, m_wallColor{wallColor}, isVisited{false}
 {
 	cell.setSize(size);
 	cell.setOrigin(cell.getSize().x / 2, cell.getSize().y / 2);
