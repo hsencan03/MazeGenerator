@@ -43,27 +43,25 @@ void Generator::update()
 	}
 	else
 	{
-		//DON'T KNOW WHICH WALL I NEED TO REMOVE
-
 		int num = rand() % neighbours.size();
 
 		switch (num)
 		{
 		case 0:	//UP
-			currentCell->removeWall(0);
-			neighbours[num]->removeWall(1);
-			break;
-		case 1: //DOWN
 			currentCell->removeWall(1);
 			neighbours[num]->removeWall(0);
 			break;
-		case 2: //LEFT
-			currentCell->removeWall(2);
-			neighbours[num]->removeWall(3);
+		case 1: //DOWN
+			currentCell->removeWall(0);
+			neighbours[num]->removeWall(1);
 			break;
-		case 3: //RIGHT
+		case 2: //LEFT
 			currentCell->removeWall(3);
 			neighbours[num]->removeWall(2);
+			break;
+		case 3: //RIGHT
+			currentCell->removeWall(2);
+			neighbours[num]->removeWall(3);
 			break;
 		default:
 			break;
