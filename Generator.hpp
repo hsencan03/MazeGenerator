@@ -24,6 +24,9 @@ public:
 	void draw(sf::RenderWindow& window);
 
 private:
+	std::vector<Cell*> GetNeighbors(Cell* cell);
+
+private:
 	sf::Vector2f m_size;
 
 	std::vector<Cell*> m_cells;
@@ -31,5 +34,6 @@ private:
 
 	Cell* currentCell;
 
-	std::stack<sf::Vector2f> m_stack;
+	std::stack<sf::Vector2i> m_stack;
+	int m_visitedSize;
 };

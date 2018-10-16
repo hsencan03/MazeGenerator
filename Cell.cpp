@@ -1,7 +1,7 @@
 #include "Cell.hpp"
 
-Cell::Cell(sf::Vector2f size, sf::Vector2f position, sf::Color color, sf::Color wallColor)
-	: m_color{color}, m_wallColor{wallColor}, isVisited{false}
+Cell::Cell(sf::Vector2f size, sf::Vector2f position, sf::Color color, sf::Color wallColor, sf::Vector2i cord)
+	: m_color{color}, m_wallColor{wallColor}, isVisited{false}, m_cord{ cord }
 {
 	cell.setSize(size);
 	cell.setOrigin(cell.getSize().x / 2, cell.getSize().y / 2);
@@ -50,6 +50,11 @@ void Cell::removeWall(int num)
 sf::Vector2f Cell::getSize() const
 {
 	return cell.getSize();
+}
+
+sf::Vector2i Cell::getCord() const
+{
+	return m_cord;
 }
 
 void Cell::draw(sf::RenderTarget& target, sf::RenderStates states) const
